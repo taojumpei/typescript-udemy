@@ -1,38 +1,17 @@
-// スプレッド演算子
-let categories = ['post', 'news', 'info'];
-// ...categories
+// アロー関数
+// () => {};
+let add = (x1: number, x2: number): number => {
+  return x1 + x2;
+};
+console.log(add(1, 3));
 
-// 複製
-let copyCat = [...categories];
-// console.log(copyCat, copyCat === categories);
+let hello = (name) => `Hello, ${name}!`;
+console.log(hello('Tao'));
 
-// 連結
-let pushCat = ['other', ...categories];
-// console.log(pushCat);
+document.getElementById('button1').addEventListener('click', function () {
+  console.log(this);
+});
 
-let unshiftCat = [...categories, 'other'];
-// console.log(unshiftCat);
-
-// 挿入
-let insertCat = ['other', ...categories, 'Q&A'];
-// console.log(insertCat);
-
-// マージ
-let mergeCat = [...categories, ...copyCat];
-// console.log(mergeCat);
-
-// オブジェクト
-let post = { id: 1, content: 'dummy', created: '2020-01-01' };
-
-let copyObj = { ...post };
-// console.log(copyObj);
-
-let pushObj = { ...post, updated: '2020-04-05' };
-// console.log(pushObj);
-
-let mergeObj = { ...post, pushObj };
-// console.log(mergeObj);
-
-let test = { ...categories };
-
-console.log(test);
+document.getElementById('button1').addEventListener('click', () => {
+  console.log(this);
+});
