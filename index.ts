@@ -1,17 +1,42 @@
-// アロー関数
-// () => {};
-let add = (x1: number, x2: number): number => {
-  return x1 + x2;
-};
-console.log(add(1, 3));
+class NumberStore {
+  data: number;
+}
 
-let hello = (name) => `Hello, ${name}!`;
-console.log(hello('Tao'));
+class StringStore {
+  data: string;
+}
 
-document.getElementById('button1').addEventListener('click', function () {
-  console.log(this);
-});
+// class AnyStore {
+//   data: any;
+// }
 
-document.getElementById('button1').addEventListener('click', () => {
-  console.log(this);
-});
+class Store<T> {
+  data: T;
+
+  getStore(): T {
+    // T:type, U, V,T1,T2,T3
+    return this.data;
+  }
+}
+
+let stringData = new Store<string>();
+
+let numberData = new Store<number>();
+
+let booleanData = new Store<boolean>();
+
+function hello<T>(keyword: T) {
+  console.log(`legs : ${keyword}`);
+}
+
+hello<string>('Hello, Tao!');
+hello<number>(10000);
+
+class Component<T, U> {
+  name: T;
+  created: U;
+}
+
+let component = new Component<string, number>();
+
+component.created = 20200401;
